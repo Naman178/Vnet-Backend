@@ -22,6 +22,7 @@ class UserController extends Controller
 {
     function __construct()
     {
+        // for the different kind of permission
         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','show']]);
         $this->middleware('permission:user-create', ['only' => ['edit','store']]);
         $this->middleware('permission:user-edit', ['only' => ['edit','store']]);
